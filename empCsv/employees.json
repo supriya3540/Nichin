@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Arjun",
+    "address": "Bangalore",
+    "salary": 45000
+  },
+  {
+    "id": 2,
+    "name": "Kiran",
+    "address": "Mysore",
+    "salary": 52000
+  },
+  {
+    "id": 3,
+    "name": "Rohit",
+    "address": "Hubli",
+    "salary": 48000
+  },
+  {
+    "id": 4,
+    "name": "Amit",
+    "address": "Tumkur",
+    "salary": 50000
+  }
+]
