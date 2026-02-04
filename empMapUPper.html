@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map + Dictionary + Employee Table (One Page)</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f6fa; padding: 20px; }
+    h2 { color: #1a2a6c; }
+    section { background: #fff; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; }
+    button { padding: 8px 14px; background: #1a2a6c; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #b21f1f; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #1a2a6c; color: white; }
+    pre { background: #f1f2f6; padding: 10px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+
+  <h1>Higher Order Function Demo</h1>
+
+  <section>
+    <h2>String Array → Uppercase + Dictionary</h2>
+    <button onclick="convertStrings()">Convert Strings</button>
+    <pre id="dictOutput"></pre>
+  </section>
+
+  <section>
+    <h2>Employees → Table Rows using map()</h2>
+    <button onclick="renderEmployees()">Render Employees</button>
+
+    <table id="empTable">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Salary</th>
+      </tr>
+    </table>
+  </section>
+
+  <script>
+    const cities = ["bangalore", "mysore", "hubli", "mangalore"];
+
+    function convertStrings() {
+      const upper = cities.map(c => c.toUpperCase());
+      const dict = {};
+      cities.map((item, index) => {
+        dict[item] = upper[index];
+      });
+      document.getElementById("dictOutput").innerText =
+        JSON.stringify(dict, null, 2);
+    }
+
+    const employees = [
+      { id: 1, name: "Arjun", city: "Bangalore", salary: 45000 },
+      { id: 2, name: "Kiran", city: "Mysore", salary: 52000 },
+      { id: 3, name: "Rohit", city: "Hubli", salary: 48000 },
+      { id: 4, name: "Amit", city: "Tumkur", salary: 50000 }
+    ];
+
+    function renderEmployees() {
+      const rows = employees.map(emp => `
+        <tr>
+          <td>${emp.id}</td>
+          <td>${emp.name}</td>
+          <td>${emp.city}</td>
+          <td>${emp.salary}</td>
+        </tr>
+      `).join("");
+
+      document.getElementById("empTable").innerHTML = `
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Salary</th>
+        </tr>
+        ${rows}
+      `;
+    }
+  </script>
+
+</body>
+</html>
