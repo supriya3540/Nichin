@@ -1,0 +1,13 @@
+{
+  "name": "math-utility-cli",
+  "version": "1.0.0",
+  "description": "CLI calculator using custom math utility library (factorial, prime check, matrix multiplication)",
+  "main": "calculator.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node Calculator.js"
+  },
+  "keywords": ["nodejs", "cli", "math", "factorial", "prime", "matrix"],
+  "author": "supriya",
+  "license": "MIT"
+}
